@@ -19,7 +19,7 @@ export const fetchAllCampusesThunk = () => async (dispatch) => {  // The THUNK
     console.error(err);
   }
 };
-
+//ADD CAMPUS THUNK CREATOR
 export const addCampusThunk = (campus) => async (dispatch) => {
   try {
     let res = await axios.post(`/api/campuses`, campus);
