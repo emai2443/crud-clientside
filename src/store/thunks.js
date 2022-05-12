@@ -29,7 +29,7 @@ export const addCampusThunk = (campus) => async (dispatch) => {
     console.error(err);
   }
 };
-
+//DELETE CAMPUS THUNK CREATOR
 export const deleteCampusThunk = campusId => async dispatch => {
   try {
     await axios.delete(`/api/campuses/${campusId}`);
@@ -39,7 +39,7 @@ export const deleteCampusThunk = campusId => async dispatch => {
     console.error(err);
   }
 };
-
+//EDIT CAMPUS THUNK CREATOR
 export const editCampusThunk = (campus,id) => async dispatch => {
   try {
     let updatedCampus = await axios.put(`/api/campuses/${id}`, campus);
