@@ -90,7 +90,7 @@ const NewCampusView = (props) => {
             <textarea
               name="description"
               style={{ margin: 8, width: "300px", height: "75px" }}
-              placeholder="Enter Description Here"
+              placeholder="Please Enter Campus Description Here"
               required
               fullWidth
               margin="normal"
