@@ -41,32 +41,47 @@ const NewStudentView = (props) => {
   // Render a New Student view with an input form
   return (
     <div>
-      <h1>New Student</h1>
+      <h1 style={{margin:'20px', color:'white'}}>New Student</h1>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
-            <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
+            <Typography style={{fontWeight: 'bold', padding:'10px', fontSize: '20px'}}>
               Add a Student
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
+            <input type="text" name="firstname" required onChange ={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
+            <input type="text" name="lastname" required onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
+            <input type="text" name="email" required onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Image URL: </label>
+            <input type="text" name="imageUrl" placeholder='(optional)' onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
+            <input type="number" name="gpa" required min="0.0" max="4.0" step="0.1" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Id: </label>
-            <input type="text" name="campusId" onChange={(e) => handleChange(e)} />
+            <input type="text" name="campusId" required onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
-            <Button variant="contained" color="primary" type="submit">
+            <Button style={{backgroundColor:'#585858',borderRadius:10,color:'white'}} type="submit">
               Submit
             </Button>
             <br/>
@@ -77,5 +92,6 @@ const NewStudentView = (props) => {
     </div>    
   )
 }
+
 
 export default NewStudentView;
