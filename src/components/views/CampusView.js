@@ -11,7 +11,7 @@ const CampusView = (props) => {
   const { campus, deleteCampus, editCampus, unenrollStudent } = props;
 
   // Render a single Campus view with list of its students
-  if (!campus.student.length) {
+  if (!campus.students.length) {
     return (
       <div>
         <h1>{campus.name}</h1>
