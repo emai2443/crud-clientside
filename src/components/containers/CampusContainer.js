@@ -13,7 +13,7 @@ import {
   deleteCampusThunk,
   editStudentThunk,
 } from "../../store/thunks";
-
+import { Redirect } from "react-router-dom";
 import { CampusView } from "../views";
 
 class CampusContainer extends Component {
@@ -37,7 +37,7 @@ class CampusContainer extends Component {
     let targetStudent = {
       campusId: null, //set campusID to null
     };
-    await this.props.editStudentThunk(targetStudent, student.id); //editStudentThunk taking in target student and the id of the student
+    await this.props.editStudentThunk(targetStudent, student.id); //editStudent taking in target student and the id of the student
     this.props.fetchCampus(this.props.match.params.id); //edit  the campus and student information
     this.setState({
       updated: true, //update status set to true
@@ -50,6 +50,9 @@ class CampusContainer extends Component {
 
   // Render a Campus view by passing campus data as props to the corresponding View component
   render() {
+    if (this.state.deleted) {
+      return <Redirect to={`/campuses`} />;
+    }
     return (
       <div>
         <Header />
