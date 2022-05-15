@@ -37,7 +37,7 @@ class CampusContainer extends Component {
     let targetStudent = {
       campusId: null, //set campusID to null
     };
-    await this.props.editStudent(targetStudent, student.id); //editStudentThunk taking in target student and the id of the student
+    await this.props.editStudentThunk(targetStudent, student.id); //editStudentThunk taking in target student and the id of the student
     this.props.fetchCampus(this.props.match.params.id); //edit  the campus and student information
     this.setState({
       updated: true, //update status set to true
@@ -55,8 +55,8 @@ class CampusContainer extends Component {
         <Header />
         <CampusView
           campus={this.props.campus}
-          unenroll={this.unenroll}
-          remove={this.remove}
+          unenrollStudent={this.unenrollStudent}
+          removeStudent={this.removeStudent}
         />
       </div>
     );

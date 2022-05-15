@@ -73,10 +73,7 @@ const CampusView = (props) => {
                         padding: "5px",
                       }}
                     >
-                      <button
-                        style={{ borderRadius: 10 }}
-                        onClick={() => unenrollStudent(student)}
-                      >
+                      <button style={{ borderRadius: 10 }} onClick={() => unenrollStudent(student)}>
                         Unenroll
                       </button>
                     </td>
