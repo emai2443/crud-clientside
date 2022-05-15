@@ -76,6 +76,8 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
+    deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId)),
+    editStudent: (student, id) => dispatch(editStudentThunk(student, id)),
   };
 };
 
