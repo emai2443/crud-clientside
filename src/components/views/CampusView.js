@@ -52,35 +52,10 @@ const CampusView = (props) => {
             <button onClick={() => deleteCampus(campus.id)}>
               Delete Campus
             </button>
-            <h3>Students Enrolled</h3>
-            <table>
-              <tr>
-                <th>Student Name</th>
-              </tr>
-              {campus.students.map((student) => {
-                let name = student.firstname + " " + student.lastname;
-                return (
-                  <tr key={student.id}>
-                    <td>
-                      <Link to={`/student/${student.id}`}>
-                        <p style={{ color: "black" }}>{name}</p>
-                      </Link>
-                    </td>
-                    <td
-                      style={{
-                        border: "1px solid black",
-                        borderCollapse: "collapse",
-                        padding: "5px",
-                      }}
-                    >
-                      <button style={{ borderRadius: 10 }} onClick={() => unenrollStudent(student)}>
+            <button style={{ borderRadius: 10 }} onClick={() => unenrollStudent(student)}>
                         Unenroll
                       </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </table>
+            <h3>Students Enrolled</h3> 
             <button onClick={() => editCampus(campus.id)}>Edit Campus</button>
           </div>
         );
