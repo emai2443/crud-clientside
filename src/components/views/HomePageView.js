@@ -12,6 +12,7 @@ const HomePageView = () => {
     <div>
       <h1>Home Page</h1>
       <Link to={`/campuses`}>Campuses</Link>
+      <br />
       <Link to={`/students`}>Students</Link>
     </div>
   );
