@@ -1,4 +1,4 @@
-import { Link } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 /*==================================================
 HomePageView.js
@@ -11,13 +11,19 @@ const HomePageView = () => {
   return (
     <div>
       <h1>Home Page</h1>
-      <Link to={`/campuses`}>
-        <button>Campuses</button>
-      </Link>
+      <h2>
+        <Link to="/campuses">
+          <button>Campuses</button>
+        </Link>
+      </h2>
+
       <br />
-      <Link to={`/students`}>
-        <button>Campuses</button>
-      </Link>
+      <h2>
+        {" "}
+        <Link to="/students">
+          <button>Students</button>
+        </Link>
+      </h2>
     </div>
   );
 };
