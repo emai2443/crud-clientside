@@ -11,9 +11,13 @@ const HomePageView = () => {
   return (
     <div>
       <h1>Home Page</h1>
-      <Link to={`/campuses`}>Campuses</Link>
+      <Link to={`/campuses`}>
+        <button>Campuses</button>
+      </Link>
       <br />
-      <Link to={`/students`}>Students</Link>
+      <Link to={`/students`}>
+        <button>Campuses</button>
+      </Link>
     </div>
   );
 };
