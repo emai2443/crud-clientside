@@ -38,12 +38,12 @@ class EditStudentContainer extends Component {
     //prevents page from refreshing after submitting
     event.preventDefault();
     let student = {
-      firstname: this.props.student.firstname,
-      lastname: this.props.student.lastname,
-      email: this.props.student.email,
-      imageUrl: this.props.student.imageUrl,
-      gpa: this.props.student.gpa,
-      campusId: this.props.student.campusId,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      email: this.state.email,
+      imageUrl: this.state.imageUrl,
+      gpa: this.state.gpa,
+      campusId: this.state.campusId,
     };
     //updates Student data in the db
     await this.props.editStudent(student, this.props.student.id);
