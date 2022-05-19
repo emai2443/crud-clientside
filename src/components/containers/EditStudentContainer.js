@@ -46,7 +46,7 @@ class EditStudentContainer extends Component {
       campusId: this.props.student.campusId,
     };
     //updates Student data in the db
-    await this.props.editCampus(student, this.props.student.id);
+    await this.props.editStudent(student, this.props.student.id);
     //updates state and redirects to show the new campus
     this.setState({
       redirect: true,
@@ -66,7 +66,7 @@ class EditStudentContainer extends Component {
       <div>
         <header />
         <EditStudentView
-          campus={this.props.campus}
+          student={this.props.student}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />

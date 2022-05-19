@@ -8,10 +8,10 @@ If needed, it also defines the component's "connect" function.
 import Header from "./Header";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { deleteStudentThunk, fetchStudentThunk } from "../../store/thunks";
+import { fetchStudentThunk } from "../../store/thunks";
 import { StudentView } from "../views";
 import { Redirect } from "react-router-dom";
-
+import { deleteStudentThunk } from "../../store/thunks";
 class StudentContainer extends Component {
   constructor() {
     super();
@@ -60,7 +60,7 @@ const mapState = (state) => {
 // The "mapDispatch" calls the specific Thunk to dispatch its action. The "dispatch" is a function of Redux Store.
 const mapDispatch = (dispatch) => {
   return {
-    deleteStudentThunk: (studentId) => dispatch(deleteStudentThunk(studentId)),
+    deleteStudent: (studentId) => dispatch(deleteStudentThunk(studentId)),
     fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
   };
 };
