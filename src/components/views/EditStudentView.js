@@ -31,7 +31,7 @@ const useStyles = makeStyles( () => ({
 const EditStudentView = (props) => {
     const {handleChange, handleSubmit, student } = props;
     const classes = useStyles();
-    //input form in new student view 
+    //input form in new campus view 
     return (
         <div>
           <h1 style={{margin:'20px', color:'white'}}>Edit Student</h1>
@@ -48,9 +48,12 @@ const EditStudentView = (props) => {
                 <input type="text" name="firstname" required defaultValue={student.firstname} onChange ={(e) => handleChange(e)} />
                 <br/>
                 <br/>
-
                 <label style= {{ fontWeight: 'bold'}}>Last Name: </label>
-                <input type="text" name="lastname" placeholder='(optional)' defaultValue={student.lastname} onChange ={(e) => handleChange(e)} />
+                <input type="text" name="lastname" required defaultValue={student.lastname} onChange ={(e) => handleChange(e)} />
+                <br/>
+                <br/>
+                <label style= {{ fontWeight: 'bold'}}>Email: </label>
+                <input type="text" name="email" required defaultValue={student.email} onChange ={(e) => handleChange(e)} />
                 <br/>
                 <br/>
     
@@ -60,15 +63,13 @@ const EditStudentView = (props) => {
                 <br/>
     
                 <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
-                <input type="text" name="gpa" required defaultValue={student.gpa} onChange={(e) => handleChange(e)} />
+                <input type="number" name="gpa" required min="0.0" max="4.0" step="0.1" onChange={(e) => handleChange(e)} />
                 <br/>
                 <br/>
-    
-                <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Id: </label>
-                <input type="text" name="campusId" required onChange={(e) => handleChange(e)} />
+                <label style= {{ fontWeight: 'bold'}}>Campus id: </label>
+                <input type="text" name="campusId" required defaultValue={student.campusId} onChange ={(e) => handleChange(e)} />
                 <br/>
                 <br/>
-
                 <Button style={{backgroundColor:'#585858',borderRadius:10,color:'white'}} type="submit">
                   Submit
                 </Button>

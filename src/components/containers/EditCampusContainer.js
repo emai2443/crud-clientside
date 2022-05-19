@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 
 import EditCampusView from '../views/EditCampusView';
 import { fetchCampusThunk, editCampusThunk } from '../../store/thunks';
+import { deleteCampus } from '../../store/actions/actionCreators';
 
 class EditCampusContainer extends Component {
 
@@ -74,13 +75,13 @@ class EditCampusContainer extends Component {
     }
 }
 
-    const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch) => {
       
-        return({
-            editCampus: (campus,id) => dispatch(editCampusThunk(campus,id)),
-            fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
-        })
-    }
+    return({
+        editCampus: (campus,id) => dispatch(editCampusThunk(campus,id)),
+        fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
+    })
+}
 // The following constructs the "connect" function used by EditCampusContainer to connect to Redux Store.  
 // Passing Redux Thunk (action creator) as props to the "connect" function
 // The "mapDispatch" is to call the specific Thunk to dispatch its action.

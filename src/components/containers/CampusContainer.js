@@ -27,7 +27,7 @@ class CampusContainer extends Component {
     this.props.fetchCampus(this.props.match.params.id);
   }
 
-  removeStudent = async (targetCampusId) => {
+  removeCampus = async (targetCampusId) => {
     await this.props.deleteCampus(targetCampusId);
     this.setState({
       deleted: true, //deleted true
@@ -59,7 +59,7 @@ class CampusContainer extends Component {
         <CampusView
           campus={this.props.campus}
           unenrollStudent={this.unenrollStudent}
-          removeStudent={this.removeStudent}
+          removeCampus={this.removeCampus}
         />
       </div>
     );
