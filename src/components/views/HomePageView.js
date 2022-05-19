@@ -1,3 +1,5 @@
+import { Link } from "@material-ui/core";
+
 /*==================================================
 HomePageView.js
 
@@ -7,10 +9,12 @@ It constructs a React component to display the home page.
 const HomePageView = () => {
   // Render Home page view
   return (
-    <div >
+    <div>
       <h1>Home Page</h1>
+      <Link to={`/campuses`}>Campuses</Link>
+      <Link to={`/students`}>Students</Link>
     </div>
-  );    
-}
+  );
+};
 
 export default HomePageView;
